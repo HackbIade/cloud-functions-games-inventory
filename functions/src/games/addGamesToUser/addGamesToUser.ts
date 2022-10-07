@@ -43,10 +43,10 @@ export const addGamesToUser = functions.https.onCall(
         status: "success",
         message: "Added",
       };
-    } catch (error) {
+    } catch (error: any) {
       throw new functions.https.HttpsError(
-        "aborted",
-        "It wasn't possible to add the game"
+        error.code || "aborted",
+        error.message || "It wasn't possible to add the game"
       );
     }
   }
