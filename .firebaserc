@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "dev": "games-inventory",
+    "default": "games-inventory"
+  },
+  "targets": {},
+  "etags": {}
+}
