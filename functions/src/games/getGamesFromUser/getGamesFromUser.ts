@@ -14,6 +14,7 @@ export const getGamesFromUser = functions.https.onCall(
         .collection("users")
         .doc(request.user)
         .collection("games")
+        .orderBy("name")
         .get();
 
       games.forEach((game) => {
