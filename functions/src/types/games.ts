@@ -7,7 +7,9 @@ export type GamesType = {
   developer?: string;
   publisher?: string;
   completionDate?: Date;
+  isLimitedRun?: boolean;
   digitalVersion?: boolean;
   addedToCollection?: Date;
   startedPlayingDate?: Date;
+  trandingGameCard?: boolean;
 };
