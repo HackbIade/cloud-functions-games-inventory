@@ -20,6 +20,9 @@ admin.initializeApp({
 });
 
 import { getGamesFromUser, addGamesToUser } from "./games";
+import { addConsolesToUser, getConsolesFromUser } from "./consoles";
 
 exports.addGamesToUser = addGamesToUser;
 exports.getGamesFromUser = getGamesFromUser;
+exports.addConsolesToUser = addConsolesToUser;
+exports.getConsolesFromUser = getConsolesFromUser;

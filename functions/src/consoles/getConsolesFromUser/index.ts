@@ -1,0 +1,1 @@
+export { getConsolesFromUser } from "./getConsolesFromUser";

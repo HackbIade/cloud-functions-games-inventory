@@ -11,6 +11,8 @@
 
 - **addGamesToUser**: Cloud Function para agregar juegos a la colección de un usuario.
 - **getGamesFromUser**: Cloud Function para listar de forma no páginada los juegos coleccionados de un usuario.
+- **addConsolesToUser**: Cloud Function para agregar consolas a la colección de un usuario.
+- **getConsolesFromUser**: Cloud Function para listar de forma no páginada las consolas coleccionadas de un usuario.
 
 ## 🏁 Instalación & Uso:
 
