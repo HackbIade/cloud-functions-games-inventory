@@ -1,2 +1,2 @@
-export * from "./addGamesToUser";
-export * from "./getGamesFromUser";
+export { addGamesToUser } from "./addGamesToUser";
+export { getGamesFromUser } from "./getGamesFromUser";

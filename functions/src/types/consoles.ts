@@ -1,11 +1,12 @@
 export interface ConsolesType {
-  name: string;
+  name?: string;
   icon?: string;
   type?: string;
   version?: string;
   developer?: string;
   generation?: string;
   releaseYear?: number;
+  addedToCollection?: Date;
   technicalSpecs?: ConsolesTechnicalSpecsType;
 }
 
