@@ -15,6 +15,7 @@ lib
 **/serviceAccount.json
 yarn.lock
 .DS_Store
+functions/firestoreEmulatorSeed*
 
 # Firebase config
 
