@@ -1,4 +1,4 @@
-import { ConsolesType } from "../../types";
+import { ConsolesType } from "../../../types";
 
 export type AddConsolesToUserRequestType = {
   user: string;

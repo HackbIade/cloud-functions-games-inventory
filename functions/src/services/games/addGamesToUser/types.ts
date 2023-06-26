@@ -1,4 +1,4 @@
-import { GamesType } from "../../types";
+import { GamesType } from "../../../types";
 
 export type AddGamesToUserRequestType = {
   user: string;

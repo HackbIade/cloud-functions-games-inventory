@@ -19,10 +19,16 @@ admin.initializeApp({
   credential: admin.credential.cert(params),
 });
 
-import { getGamesFromUser, addGamesToUser } from "./games";
-import { addConsolesToUser, getConsolesFromUser } from "./consoles";
+import {
+  addGamesToUser,
+  getUserFromUid,
+  getGamesFromUser,
+  addConsolesToUser,
+  getConsolesFromUser,
+} from "./services";
 
 exports.addGamesToUser = addGamesToUser;
+exports.getUserFromUid = getUserFromUid;
 exports.getGamesFromUser = getGamesFromUser;
 exports.addConsolesToUser = addConsolesToUser;
 exports.getConsolesFromUser = getConsolesFromUser;

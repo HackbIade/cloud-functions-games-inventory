@@ -1,0 +1,1 @@
+export { getUserFromUid } from "./getUserFromUid";

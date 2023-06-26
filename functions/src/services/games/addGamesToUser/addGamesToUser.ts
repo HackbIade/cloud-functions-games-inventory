@@ -2,13 +2,14 @@
 import { firestore } from "firebase-admin";
 import * as functions from "firebase-functions";
 
-import { UsersTypes } from "../../types";
-import { AddConsolesToUserRequestType } from "./types";
+import { UsersTypes } from "../../../types";
+import { AddGamesToUserRequestType } from "./types";
+import { STATUS_NAMES } from "../../../constants/status";
 
 const db = firestore();
 
-export const addConsolesToUser = functions.https.onCall(
-  async (request: AddConsolesToUserRequestType) => {
+export const addGamesToUser = functions.https.onCall(
+  async (request: AddGamesToUserRequestType) => {
     try {
       const user = await db.collection("users").doc(request.user).get();
       const { userCode } = user.data() as UsersTypes;
@@ -19,19 +20,20 @@ export const addConsolesToUser = functions.https.onCall(
           "You don't have enought permissions"
         );
       }
-
       const creationPromise: Promise<any>[] = [];
-      request?.consoles.forEach((console) => {
+      request?.games.forEach((game) => {
         creationPromise.push(
           db
-            .collection("consoles")
+            .collection("users")
             .doc(request.user)
-            .collection("consoles")
+            .collection("games")
             .doc()
             .set({
-              ...console,
+              ...game,
+              digitalVersion: !!game?.digitalVersion,
+              status: game?.status || STATUS_NAMES.BACKLOG,
               addedToCollection:
-                console?.addedToCollection || new Date().toString(),
+                game?.addedToCollection || new Date().toString(),
             })
         );
       });
@@ -45,7 +47,7 @@ export const addConsolesToUser = functions.https.onCall(
     } catch (error: any) {
       throw new functions.https.HttpsError(
         error.code || "aborted",
-        error.message || "It wasn't possible to add the consoles"
+        error.message || "It wasn't possible to add the games"
       );
     }
   }

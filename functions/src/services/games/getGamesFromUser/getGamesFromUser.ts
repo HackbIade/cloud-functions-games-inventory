@@ -1,7 +1,7 @@
 import { firestore } from "firebase-admin";
 import * as functions from "firebase-functions";
 
-import { GamesType } from "../../types";
+import { GamesType } from "../../../types";
 import { GetGamesFromUserRequest } from "./types";
 
 const db = firestore();

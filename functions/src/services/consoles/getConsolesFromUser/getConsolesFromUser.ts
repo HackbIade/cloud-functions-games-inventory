@@ -1,7 +1,7 @@
 import { firestore } from "firebase-admin";
 import * as functions from "firebase-functions";
 import { GetConsolesFromUserRequest } from "./types";
-import { ConsolesType } from "../../types";
+import { ConsolesType } from "../../../types";
 
 const db = firestore();
 
